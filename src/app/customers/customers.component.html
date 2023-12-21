@@ -1,0 +1,20 @@
+<div class="container my-5 h-50 w-50 border">
+    <h1> Welcome to customer page</h1>
+    <div class="row my-5">
+        <div class="col-6">
+            <label class="fs-6 form-label fw-bolder text-dark">Select Customer</label>
+            <ng-select class="form-control" [clearable]="false" [(ngModel)]="selectedCustomer">
+                <ng-option *ngFor="let customer of aCustomers" [value]="customer">{{customer}}</ng-option>
+            </ng-select>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-6">
+            <label class="fs-6 form-label fw-bolder text-dark">Select Country</label>
+            <ng-select class="form-control" [clearable]="false" [(ngModel)]="selectedCountry">
+                <ng-option *ngFor="let country of aCountryList" [value]="country">{{country?.name?.common ||
+                    '-'}}</ng-option>
+            </ng-select>
+        </div>
+    </div>
+</div>
